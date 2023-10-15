@@ -5,18 +5,27 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ApiProvider from './contexts/ApiContext';
 import NavSearchBar from './components/NavSearchBar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ApiProvider>
-      
-      <NavSearchBar />
+    
+        <BrowserRouter>   
 
-      
+          <NavSearchBar />
 
-      <App />
-      
+          <Routes>
+            {/* Homepage route  */}
+            <Route path="/" element={<App />}/>
+
+
+            
+          </Routes>
+
+
+        </ BrowserRouter>      
     </ApiProvider>
   </React.StrictMode>
 );
